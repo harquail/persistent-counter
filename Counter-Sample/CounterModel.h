@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
 
-
 @interface CounterModel : RLMObject
 
 @property NSInteger value;
@@ -20,10 +19,10 @@
 @end
 
 RLM_ARRAY_TYPE(CounterModel)
+
 @interface CounterList : RLMObject
 
 @property RLMArray<CounterModel *><CounterModel> *counters;
-
 @property NSInteger realmKey;
 
 @end

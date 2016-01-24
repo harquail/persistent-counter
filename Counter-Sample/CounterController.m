@@ -8,9 +8,7 @@
 
 #import "CounterController.h"
 
-#define MAX_COUNT 10
-
-
+/// adds, deletes, and persists counters
 @implementation CounterController
 {
 @private
@@ -22,6 +20,7 @@
 {
     self = [super init];
     if (self) {
+        // if a counter list exists, use that. Otherwise, make a new one
         realm = RLMRealm.defaultRealm;
         CounterList* persistedCounters = [[CounterList allObjects] firstObject];
         if(persistedCounters){
@@ -38,19 +37,21 @@
     return self;
 }
 
+# pragma mark adding and removing counters
+
 - (void) addCounter{
     [realm transactionWithBlock:^{
-        CounterModel * newCounter = [[CounterModel alloc] initWithTitle:@"undefined"];
+        CounterModel * newCounter = [[CounterModel alloc] initWithTitle:@"New Counter"];
         // add new counter to top
         [counters.counters insertObject:newCounter atIndex:0];
     }];
-    
 }
 
-- (void) changeCounterAtIndex:(NSUInteger) index changeAmount:(NSInteger) change{
+# pragma mark modifying counters
+
+- (void) removeCounterAtIndex:(NSUInteger) index{
     [realm transactionWithBlock:^{
-        CounterModel * counter = [self counterForIndex:index];
-        [counter setValue:counter.value + change];
+        [counters.counters removeObjectAtIndex:index];
     }];
 }
 
@@ -62,8 +63,31 @@
     [self changeCounterAtIndex:index changeAmount:-1];
 }
 
-- (CounterModel *) counterForIndex: (NSUInteger) position{
-    return [counters.counters objectAtIndex:position];
+/// helper function for changing counter values
+- (void) changeCounterAtIndex:(NSUInteger) index changeAmount:(NSInteger) change{
+    [realm transactionWithBlock:^{
+        CounterModel * counter = [self counterForIndex:index];
+        [counter setValue:counter.value + change];
+    }];
+}
+
+- (void) moveCounterAtIndex:(NSUInteger)source toIndex:(NSUInteger)destination{
+    [realm transactionWithBlock:^{
+        [counters.counters moveObjectAtIndex:source toIndex:destination];
+    }];
+}
+
+- (void) renameCounterAtIndex:(NSUInteger)index name:(NSString *)newName{
+    [realm transactionWithBlock:^{
+        CounterModel * counter = [self counterForIndex:index];
+        [counter setTitle:newName];
+    }];
+}
+
+# pragma mark retrieving data
+
+- (CounterModel *) counterForIndex: (NSUInteger) index{
+    return [counters.counters objectAtIndex:index];
 }
 
 - (NSUInteger) numberOfCounters{

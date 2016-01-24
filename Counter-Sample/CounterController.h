@@ -14,11 +14,11 @@
 
 - (NSUInteger) numberOfCounters;
 - (void) addCounter;
-- (CounterModel *) counterForIndex: (NSUInteger) position;
+- (void) removeCounterAtIndex: (NSUInteger) index;
+- (CounterModel *) counterForIndex: (NSUInteger) index;
 - (void) incrementCounterAtIndex:(NSUInteger) index;
 - (void) decrementCounterAtIndex:(NSUInteger) index;
-
-
-//= RLMRealm.defaultRealm;
+- (void) moveCounterAtIndex:(NSUInteger) source toIndex: (NSUInteger) destination;
+- (void) renameCounterAtIndex:(NSUInteger) index name:(NSString *) newName;
 
 @end

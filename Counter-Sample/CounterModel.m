@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CounterModel.h"
 
+/// a counter has a name and a numerical value
 @implementation CounterModel
 
 - (instancetype)initWithTitle:(NSString*) title
@@ -23,6 +24,7 @@
 
 @end
 
+/// the list of all counters — persisted to realm
 @implementation CounterList
 
 - (instancetype)init
