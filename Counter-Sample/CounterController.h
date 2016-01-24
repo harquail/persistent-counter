@@ -25,7 +25,7 @@
 
 /// change title of counter
 - (void) renameCounterAtIndex:(NSUInteger) index name:(NSString *) newName;
-/// moves counter in the list
+/// move counter in the list
 - (void) moveCounterAtIndex:(NSUInteger) source toIndex: (NSUInteger) destination;
 
 /// get the counter at an index
