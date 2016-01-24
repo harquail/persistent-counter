@@ -32,7 +32,7 @@
     self = [super init];
     if (self) {
         self.counters = [[RLMArray<CounterModel> alloc] initWithObjectClassName:[CounterModel className]];
-        // every counterList has the same realm key, ensuring we only have one persisted in realm
+        // every counterList has the same realm key, ensuring we only have one list persisted in realm
         self.realmKey = 0;
     }
     return self;

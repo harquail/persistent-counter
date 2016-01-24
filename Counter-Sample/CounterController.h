@@ -10,15 +10,27 @@
 #import <Realm/Realm.h>
 #import "CounterModel.h"
 
+/// adds, deletes, and persists counters
 @interface CounterController : NSObject
 
-- (NSUInteger) numberOfCounters;
+/// make a new counter at index 0
 - (void) addCounter;
+/// delete counter
 - (void) removeCounterAtIndex: (NSUInteger) index;
-- (CounterModel *) counterForIndex: (NSUInteger) index;
+
+/// increase counter value by 1
 - (void) incrementCounterAtIndex:(NSUInteger) index;
+/// decrease counter value by 1
 - (void) decrementCounterAtIndex:(NSUInteger) index;
-- (void) moveCounterAtIndex:(NSUInteger) source toIndex: (NSUInteger) destination;
+
+/// change title of counter
 - (void) renameCounterAtIndex:(NSUInteger) index name:(NSString *) newName;
+/// moves counter in the list
+- (void) moveCounterAtIndex:(NSUInteger) source toIndex: (NSUInteger) destination;
+
+/// get the counter at an index
+- (CounterModel *) counterForIndex: (NSUInteger) index;
+/// total # of counters
+- (NSUInteger) numberOfCounters;
 
 @end

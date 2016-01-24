@@ -8,7 +8,6 @@
 
 #import "CounterController.h"
 
-/// adds, deletes, and persists counters
 @implementation CounterController
 {
 @private

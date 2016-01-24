@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // hack bc storyboard edit button does not change to done automatically
+    // hack bc storyboard edit button does not toggle automatically
     // https://stackoverflow.com/questions/7921579/iphone-storyboard-editing-a-table-view
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
@@ -34,10 +34,12 @@
 
 # pragma mark handling button presses
 
+/// toggle tableview editing on press
 - (IBAction)editPressed:(UIBarButtonItem *)sender {
     (self.tableView.isEditing) ? [self.tableView setEditing:NO animated:YES] : [self.tableView setEditing:YES animated:YES];
 }
 
+/// add a counter, and pop up a dialog to change name
 - (IBAction)addPressed:(UIBarButtonItem *)sender {
     [self.counterController addCounter];
     
@@ -57,7 +59,6 @@
             default:
                 break;
         }
-
     };
     
     UIAlertAction * save = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:addHandler];
@@ -78,11 +79,14 @@
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+/// decrementsor increment counter value on press
 - (IBAction)segmentedControlPressed:(UISegmentedControl *)sender {
+    
+    // get index of control's cell
     CGPoint buttonPosition = [sender convertPoint:CGPointZero toView:self.tableView];
     NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:buttonPosition];
     
-    // 0 if decrement, 1 if increment
+    // 0 for decrement, 1 for increment
     NSInteger index = sender.selectedSegmentIndex;
     (index) ? [self.counterController incrementCounterAtIndex:indexPath.row] : [self.counterController decrementCounterAtIndex:indexPath.row];
     

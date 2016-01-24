@@ -13,3 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *valueLabel;
 @end
+
+@implementation CounterTableViewCell
+@end

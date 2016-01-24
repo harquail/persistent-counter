@@ -14,7 +14,6 @@
 		F114F6DB1C5070B200D5E81E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F114F6DA1C5070B200D5E81E /* Assets.xcassets */; };
 		F114F6DE1C5070B300D5E81E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F114F6DC1C5070B300D5E81E /* LaunchScreen.storyboard */; };
 		F1397E7D1C54383400FF6A73 /* CounterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1397E7C1C54383400FF6A73 /* CounterModel.m */; };
-		F1397E801C544AFD00FF6A73 /* CounterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1397E7F1C544AFD00FF6A73 /* CounterTableViewCell.m */; };
 		F16F9F2C1C508B090072D452 /* CounterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16F9F2B1C508B090072D452 /* CounterTableViewController.m */; };
 		F1D0C5581C51CE0F00FC421C /* CounterController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D0C5571C51CE0F00FC421C /* CounterController.m */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		F114F6DF1C5070B300D5E81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1397E7C1C54383400FF6A73 /* CounterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterModel.m; sourceTree = "<group>"; };
 		F1397E7E1C544AFD00FF6A73 /* CounterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterTableViewCell.h; sourceTree = "<group>"; };
-		F1397E7F1C544AFD00FF6A73 /* CounterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterTableViewCell.m; sourceTree = "<group>"; };
 		F16F9F2A1C508B090072D452 /* CounterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterTableViewController.h; sourceTree = "<group>"; };
 		F16F9F2B1C508B090072D452 /* CounterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CounterTableViewController.m; sourceTree = "<group>"; };
 		F1D0C5561C51CE0F00FC421C /* CounterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CounterController.h; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 				F16F9F2B1C508B090072D452 /* CounterTableViewController.m */,
 				F114F6D71C5070B200D5E81E /* Main.storyboard */,
 				F1397E7E1C544AFD00FF6A73 /* CounterTableViewCell.h */,
-				F1397E7F1C544AFD00FF6A73 /* CounterTableViewCell.m */,
 				F114F6DA1C5070B200D5E81E /* Assets.xcassets */,
 				F114F6DC1C5070B300D5E81E /* LaunchScreen.storyboard */,
 				F114F6DF1C5070B300D5E81E /* Info.plist */,
@@ -239,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1397E801C544AFD00FF6A73 /* CounterTableViewCell.m in Sources */,
 				F114F6D31C5070B200D5E81E /* AppDelegate.m in Sources */,
 				F16F9F2C1C508B090072D452 /* CounterTableViewController.m in Sources */,
 				F1D0C5581C51CE0F00FC421C /* CounterController.m in Sources */,
